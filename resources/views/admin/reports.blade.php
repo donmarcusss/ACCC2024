@@ -21,13 +21,11 @@
             <div class="dropdown">
               <th>  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Booking </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                  <h6 class="dropdown-header">Settings</h6>
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Separated link</a>
-                </div> </th>
+                  
+                  <a class="dropdown-item" href="#">Job Order</a>
+                  <a class="dropdown-item" href="#">Booking</a>
+                  
+                  </th>
 
                 
             </tr>
@@ -41,13 +39,11 @@
             <div class="dropdown">
               <th>  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> All </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                  <h6 class="dropdown-header">Settings</h6>
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Separated link</a>
-                </div> </th>
+              
+                  <a class="dropdown-item" href="#">Daily</a>
+                  <a class="dropdown-item" href="#">Monthly</a>
+                  <a class="dropdown-item" href="#">Yearly</a>
+                  </th>
 
                 
             </tr>

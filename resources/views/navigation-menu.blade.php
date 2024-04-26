@@ -38,14 +38,16 @@
             
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                    <x-nav-link href="#about">
                         {{ __('About') }}
                     </x-nav-link>
                 </div>
 
+                
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('contact') }}" :active="request()->routeIs('contact')">
-                        {{ __('Contact') }}
+                    <x-nav-link href="#services">
+                        {{ __('Services') }}
                     </x-nav-link>
                 </div>
 

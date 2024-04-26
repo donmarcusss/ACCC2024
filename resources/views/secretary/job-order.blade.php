@@ -38,7 +38,7 @@
 
             <tbody>
               <tr>
-                <td><button type="button" class="btn btn-info btn-icon-text"> Job Order <i class="badge badge-info"></i> </td>
+                <td><a href="update" class="text-decoration-none text-white"><button type="button" class="btn btn-info btn-icon-text "> Job Order <i class="badge badge-info"></i></a></td>
                 <td><span class="ps-2">Hev Abi</span></td>
                 <td> #1103 </td>
                 <td> April 28, 2024</td>

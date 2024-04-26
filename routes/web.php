@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+
 
 
 
@@ -92,6 +94,13 @@ Route::middleware([
         return view('mechanic/dashboard');
     })->name('mechanic/dashboard');
 
+    Route::get('/admin/update', function () {
+        return view('/admin/update');
+    })->name('/admin/update');
+    
+    Route::get('/admin/services', function () {
+        return view('/admin/services');
+    })->name('/admin/services');
 
     
 
@@ -119,6 +128,10 @@ Route::middleware([
         return view('/mechanic/job-order');
     })->name('/mechanic/job-order');
 
+    Route::get('/mechanic/update', function () {
+        return view('/mechanic/update');
+    })->name('/mechanic/update');
+
 
 
     // SECRETARY
@@ -142,6 +155,15 @@ Route::middleware([
     Route::get('/secretary/job-order', function () {
         return view('/secretary/job-order');
     })->name('/secretary/job-order');
+
+    Route::get('/secretary/update', function () {
+        return view('/secretary/update');
+    })->name('/secretary/update');
+
+
+    Route::get('/secretary/services', function () {
+        return view('/secretary/services');
+    })->name('/secretary/services');
 
 });
 

@@ -3,7 +3,8 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="vie
+    port" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
    
     @vite([
@@ -115,14 +116,17 @@
             </a>
           </li>
 
+
           <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="../admin/forms" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="../admin/forms">
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
               <span class="menu-title">Forms</span>
-             
             </a>
+          </li>
+
+          
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
@@ -131,7 +135,7 @@
               </ul>
             </div>
           </li>
-
+          
 
           <li class="nav-item menu-items">
             <a class="nav-link" href="../admin/roles">
@@ -139,6 +143,16 @@
                 <i class="mdi mdi-contacts"></i>
               </span>
               <span class="menu-title">Roles</span>
+            </a>
+          </li>
+
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="../admin/services">
+              <span class="menu-icon">
+                <i class="mdi mdi mdi-server"></i>
+              </span>
+              <span class="menu-title">Services</span>
             </a>
           </li>
           {{-- <li class="nav-item menu-items">
@@ -187,45 +201,8 @@
             </ul>
             <ul class="navbar-nav navbar-nav-right">
               <li class="nav-item dropdown d-none d-lg-block">
-                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-bs-toggle="dropdown" aria-expanded="false" href="#">+ Create New Job Order</a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
-                  <h6 class="p-3 mb-0">Projects</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-file-outline text-primary"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Software Development</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-web text-info"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">UI Development</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-layers text-danger"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Software Testing</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all projects</p>
-                </div>
+                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-bs-toggle="dropdown" aria-expanded="false" href="../admin/forms">+ Create New Job Order</a>
+                
               </li>
               <li class="nav-item nav-settings d-none d-lg-block">
                 

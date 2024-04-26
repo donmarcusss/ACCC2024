@@ -126,6 +126,15 @@
           </li>
 
 
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="../secretary/services">
+              <span class="menu-icon">
+                <i class="mdi mdi mdi-server"></i>
+              </span>
+              <span class="menu-title">Services</span>
+            </a>
+          </li>
+
     
           {{-- <li class="nav-item menu-items">
             <a class="nav-link" data-bs-toggle="collapse" href="../secretary/" aria-expanded="false" aria-controls="auth">
