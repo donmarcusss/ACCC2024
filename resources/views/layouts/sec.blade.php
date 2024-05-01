@@ -117,11 +117,11 @@
 
         
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../secretary/forms">
+            <a class="nav-link" href="../secretary/billing">
               <span class="menu-icon">
                 <i class="mdi  mdi-laptop"></i>
               </span>
-              <span class="menu-title">Forms</span>
+              <span class="menu-title">Billing</span>
             </a>
           </li>
 

@@ -36,13 +36,17 @@ Route::middleware([
     // USER
 
 
-    Route::get('home', function () {
+    Route::get('/home', function () {
         return view('home');
     })->name('home');
 
     Route::get('vehicle-update', function () {
         return view('vehicle-update');
     })->name('vehicle-update');
+
+    Route::get('booking', function () {
+        return view('booking');
+    })->name('booking');
 
     Route::get('repair-history', function () {
         return view('repair-history');
@@ -103,12 +107,15 @@ Route::middleware([
     })->name('/admin/services');
 
     
+    Route::get('/admin/logs', function () {
+        return view('/admin/logs');
+    })->name('/admin/logs');
 
 
 
-    Route::get('/admin/forms', function () {
-        return view('/admin/forms');
-    })->name('/admin/forms');
+    Route::get('/admin/billing', function () {
+        return view('/admin/billing');
+    })->name('/admin/billing');
 
 
     // MECHANIC
@@ -148,10 +155,6 @@ Route::middleware([
         return view('/secretary/schedule');
     })->name('/secretary/schedule');
 
-    Route::get('/secretary/forms', function () {
-        return view('/secretary/forms');
-    })->name('/secretary/forms');
-
     Route::get('/secretary/job-order', function () {
         return view('/secretary/job-order');
     })->name('/secretary/job-order');
@@ -164,6 +167,10 @@ Route::middleware([
     Route::get('/secretary/services', function () {
         return view('/secretary/services');
     })->name('/secretary/services');
+
+    Route::get('/secretary/billing', function () {
+        return view('/secretary/billing');
+    })->name('/secretary/billing');
 
 });
 

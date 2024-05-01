@@ -118,11 +118,11 @@
 
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../admin/forms">
+            <a class="nav-link" href="../admin/billing">
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Forms</span>
+              <span class="menu-title">Billing</span>
             </a>
           </li>
 
@@ -173,6 +173,18 @@
               </ul>
             </div>
           </li> --}}
+
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="../admin/logs">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Logs</span>
+            </a>
+          </li>
+
+
           <li class="nav-item menu-items">
             <a class="nav-link" href="../admin/reports">
               <span class="menu-icon">
