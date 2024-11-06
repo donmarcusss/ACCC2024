@@ -313,8 +313,8 @@
                         <i class="mdi mdi-logout text-danger"></i>
                       </div>
                     </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1" id="logout-btn">Log out</p>
+                    <div id="logout-btn">
+                      <a href="{{ route('admin.logout') }}">Log out</a>
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>

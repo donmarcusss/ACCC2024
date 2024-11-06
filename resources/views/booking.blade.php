@@ -9,6 +9,53 @@
     <script src="https://cdn.tailwindcss.com"></script>
 @vite('resources/css/app.css')
 
+
+<style>
+.status-pending {
+    width: 7rem; /* Equivalent to w-28 in Tailwind CSS */
+        
+        color: white; /* Equivalent to text-white */
+        background-color: #fbbf24; /* Equivalent to bg-yellow-500 */
+        outline: none; /* Equivalent to focus:outline-none */
+        font-weight: 500; /* Equivalent to font-medium */
+        border-radius: 0.375rem; /* Equivalent to rounded-lg */
+        font-size: 0.875rem; /* Equivalent to text-sm */
+        padding: 0.25rem 0.75rem; /* Equivalent to px-3 py-1 */
+        text-transform: uppercase;
+}
+
+.status-approved {
+        width: 7rem; /* Equivalent to w-28 in Tailwind CSS */
+        color: white; /* Equivalent to text-white */
+        background-color: #38a169; /* Equivalent to bg-green-700 */
+        outline: none; /* Equivalent to focus:outline-none */
+        box-shadow: 0 0 0 4px transparent; /* For the focus ring effect */
+        font-weight: 500; /* Equivalent to font-medium */
+        border-radius: 0.375rem; /* Equivalent to rounded-lg */
+        font-size: 0.875rem; /* Equivalent to text-sm */
+        padding: 0.25rem 0.75rem; /* Equivalent to px-3 py-1 */
+        text-transform: uppercase;
+    }
+
+    .status-cancelled {
+        width: 7rem; /* Equivalent to w-28 in Tailwind CSS */
+        color: white; /* Equivalent to text-white */
+        background-color: red; /* Equivalent to bg-green-700 */
+        outline: none; /* Equivalent to focus:outline-none */
+        box-shadow: 0 0 0 4px transparent; /* For the focus ring effect */
+        font-weight: 500; /* Equivalent to font-medium */
+        border-radius: 0.375rem; /* Equivalent to rounded-lg */
+        font-size: 0.875rem; /* Equivalent to text-sm */
+        padding: 0.25rem 0.75rem; /* Equivalent to px-3 py-1 */
+        text-transform: uppercase;
+    }
+
+    
+
+
+
+
+    </style>
 <body>
     <br>
     <div class="min-h-screen ">
@@ -35,21 +82,77 @@
                 </th>
 
                 <th scope="col" class="px-6 py-3">
-                    Time
+                    Date
                 </th>
 
                 <th scope="col" class="px-6 py-3">
-                    Date
+                    Time
                 </th>
+
+                
 
                 <th scope="col" class="px-6 py-3">
                     Vehicle
                 </th>
                 
+
+                <th scope="col" class="px-6 py-3">
+                    Description
+                </th>
+
             </tr>
         </thead>
         <tbody>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+
+            @foreach ($bookings as $booking)
+                  <tr>
+                    
+                    <td class="px-6 py-4">
+                        <span aria-expanded="false" role="button" tabindex="0" 
+                            class="{{ $booking->status == 'pending' ? 'status-pending' : ($booking->status == 'approved' ? 'status-approved' : ($booking->status == 'cancelled' ? 'status-cancelled' : '')) }}">
+                            {{ ucfirst($booking->status) }} <!-- Capitalizes the first letter -->
+                        </span>
+                    </td>
+                    <td class="px-6 py-4">{{ $booking->formatted_id  }}</td> 
+                    <td class="px-6 py-4">{{ \Carbon\Carbon::parse($booking->booking_date)->format('F-d-Y') }}</td>
+                    <td class="px-6 py-4">{{ \Carbon\Carbon::parse($booking->booking_date)->format('h:i A') }}</td>
+                    <td class="px-6 py-4"> {{ $booking->vehicle_manufacturer . ' ' . $booking->vehicle_type . ' ' . $booking->vehicle_model }}  </td>
+                    <td class="px-6 py-4">  {{ $booking->description }}  </td>
+                    
+                </tr>  
+                @endforeach 
+                    
+                    
+                    
+                  
+                    
+                  
+                  
+                  {{-- <td>
+                     <a  class="btn btn-warning "  aria-expanded="false" href="{{ route('admin/appointments/edit', ['id'=>$booking->id]) }}">Edit</a>  
+                     <a type="button" class="btn btn-danger " href="{{ route('admin/appointments/delete', ['id'=>$booking->id]) }}  aria-expanded="false">Delete</a>
+                  </td> --}}
+                  
+                  
+                 
+                 
+            
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {{-- <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <th>
                     <p data-modal-hide="default-modal" type="button" class="w-28 ml-5 text-white bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1 text-center dark:bg-blue-600 dark:focus:ring-blue-800">PENDING</p>
                 </th>
@@ -121,7 +224,7 @@
                             </td>
 
 
-                 
+                  --}}
                 
 
 

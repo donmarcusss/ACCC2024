@@ -2,7 +2,7 @@
     <x-slot name="header">
         <title> Autofixx Car Care Center | Vehicle Update </title>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Toyota Fortuner') }}
+            {{ __('') }}
         </h2>
     </x-slot>
 
@@ -19,136 +19,42 @@
        
         
 
-<div class="w-9/12 relative overflow-x-auto shadow-md sm:rounded-lg m-auto ">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-        
-            
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    Services
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Check List
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Side Note
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Update
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Mechanic
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Date & Time
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Quotation
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    <b>Oil Change</b>
-                    <br>
-                    Oil Purifier 1x
-                </th>
-                <td class="px-6 py-4">
-                    <input
-                    class
-                    type="checkbox"
-                    value=""
-                    id="checkboxChecked"
-                    checked />
-                </td>
-                <td class="px-6 py-4">
-                    None
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Image</a>
-                </td>
-                <td class="px-6 py-4">
-                   Hev Abi
-                </td>
-
-                <td class="px-6 py-4">
-                    April 28, 2024 10:00 AM
-                 </td>
-
-                 <td class="px-6 py-4">
-                    499.00
-                 </td>
-
-
-                 <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        
-                        <b>Shocks & Struts</b>
-                        <br>
-                        Hydraulic Jack 1x
-                    </th>
-                    <td class="px-6 py-4">
-                        <input
-                        class
-                        type="checkbox"
-                        value=""
-                        id="checkboxChecked"
-                        checked />
-                    </td>
-                    <td class="px-6 py-4">
-                        None
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Image</a>
-                    </td>
-                    <td class="px-6 py-4">
-                       Hev Abi
-                    </td>
-    
-                    <td class="px-6 py-4">
-                        April 29, 2024 1:00 PM
-                     </td>
-    
-                     <td class="px-6 py-4">
-                        5,499.00
-                     </td>
-                    </TR>
-
-                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            
-                        </th>
-                        <td class="px-6 py-4">
-                            
-                        </td>
-                        <td class="px-6 py-4">
-                          
-                        </td>
-                        <td class="px-6 py-4">
-                            
-                        </td>
-                        <td class="px-6 py-4">
-                           
-                        </td>
-        
-                        <td class="px-6 py-4">
-                            
-                         </td>
-        
-                         <td class="px-6 py-4">
-                            Total: 5,898.00
-                         </td>
-
-                
-
-
-
-        </tbody>
-    </table>
-</div>
+        <div class="w-9/12 relative m-auto">
+            @foreach ($tasks as $jobOrderId => $jobTasks)
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-6"> <!-- Individual container for each job order -->
+                    <h2 class="text-lg font-semibold">Job Order ID: {{ $jobOrderId }}</h2>
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+                            <tr>
+                                <th scope="col" class="px-6 py-3"> Service </th>
+                                <th scope="col" class="px-6 py-3"> Description </th>
+                                <th scope="col" class="px-6 py-3"> Unit </th>   
+                                <th scope="col" class="px-6 py-3"> Quantity </th>
+                                <th scope="col" class="px-6 py-3"> Unit Cost </th>
+                                <th scope="col" class="px-6 py-3"> Note </th>
+                                <th scope="col" class="px-6 py-3"> Time Modifed </th>
+                                <th scope="col" class="px-6 py-3"> Status </th>
+                              
+                              </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($jobTasks as $task) <!-- Iterate over each task in the jobTasks collection -->
+                                <tr>
+                                    <td class="px-6 py-4">  {{ $task->equipment && $task->equipment->service ? $task->equipment->service->service_name : 'N/A' }} </td>
+                                    <td class="px-6 py-4">{{ $task->equipment_name  }}</td>
+                                    <td class="px-6 py-4"> {{ $task->equipment ? ($task->equipment->equipment_unit) : 'N/A' }}</td>
+                                    <td class="px-6 py-4"> {{ $task->equipment ? ($task->equipment->equipment_quantity) : 'N/A' }}</td>
+                                    <td class="px-6 py-4"> {{ $task->equipment ? number_format($task->equipment->equipment_price, 2) : 'N/A' }}</td>
+                                    <td class="px-6 py-4">{{ $task->note  }}</td> 
+                                    <td class="px-6 py-4">{{ $task->updated_at->format('h:i A') }}</td>
+                                    <td class="px-6 py-4">{{ strtoupper($task->status) }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div> <!-- End of individual container -->
+            @endforeach
+        </div>
 
                  
                

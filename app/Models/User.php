@@ -24,11 +24,16 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
+        'user_type',
+        'phone_number',
         'email',
         'password',
     ];
 
+    
+    
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -62,4 +67,19 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class); // Define the inverse relationship
+    }
+
+    public function jobOrders()
+    {
+        return $this->hasMany(JobOrder::class); // This connects user_id to the JobOrder model
+    }
+
+    public function tasks()
+{
+    return $this->hasMany(Task::class);
+}
 }

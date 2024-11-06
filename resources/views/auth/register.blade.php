@@ -16,8 +16,13 @@
             @csrf
 
             <div>
-                <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-label for="first_name" value="{{ __('First Name') }}" />
+                <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="first name" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="last_name" value="{{ __('Last Name') }}" />
+                <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autocomplete="last name" />
             </div>
 
             <div class="mt-4">
@@ -26,14 +31,33 @@
             </div>
 
             <div class="mt-4">
-                <x-label for="email" value="{{ __('Phone Number') }}" />
-                <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autocomplete="username" />
+                <x-label for="phone_number" value="{{ __('Phone Number') }}" />
+                <x-input id="phone_number" class="block mt-1 w-full" type="text" name="phone_number" :value="old('phone_number')" required autocomplete="" />
             </div>
 
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" oninput="validatePassword()" />
+                
+                <!-- Warning message container -->
+                <div id="password_warning" class="mt-2 text-sm text-red-600" style="display: none;">
+                    Password must be at least 8 characters.
+                </div>
             </div>
+            
+            <script>
+                function validatePassword() {
+                    const passwordInput = document.getElementById('password');
+                    const warningElement = document.getElementById('password_warning');
+            
+                    // Check the length of the password
+                    if (passwordInput.value.length < 8) {
+                        warningElement.style.display = 'block'; // Show warning
+                    } else {
+                        warningElement.style.display = 'none'; // Hide warning
+                    }
+                }
+            </script>
 
             <div class="mt-4">
                 <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />

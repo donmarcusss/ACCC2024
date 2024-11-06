@@ -14,144 +14,65 @@
           <table class="table">
             <thead>
               <tr>
-                <th>
-                  <div class="form-check form-check-muted m-0">
-                    <label class="form-check-label">
-                      
-                    </label>
-                  </div>
-                </th>
+               
+                  
                 <th> Date </th>
                 <th> Time </th>
                 <th> Name </th>
-                <th> Reference Number</th>
+                <th> Vehicle</th>
                 <th> Description </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="form-check form-check-muted m-0">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input">
-                    </label>
-                  </div>
-                </td>
-                <td> April 28, 2024</td>
-                <td> 10:00 AM</td>
-                <td>
-                  <span class="ps-2">Hev Abi</span>
-                </td>
-                <td> #1103 </td>
-                <td> Radiator leaks </td>
-                
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="form-check form-check-muted m-0">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input">
-                    </label>
-                  </div>
-
-                </td>
-                <td> April 28, 2024</td>
-                <td> 10:00 AM</td>
-                <td>
-                  <span class="ps-2">Hell Merry</span>
-                </td>
-                <td> #6342 </td>
-                <td> Change oil </td>
-                
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="form-check form-check-muted m-0">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input">
-                    </label>
-                  </div>
-                </td>
-               
-                <td> April 28, 2024</td>
-                <td> 1:30 PM</td>
-                <td>
-                  <span class="ps-2">Saad Lechon</span>
-                </td>
-                <td> #6969 </td>
-                <td> Squeaking brakes </td>
-                
-
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="form-check form-check-muted m-0">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input">
-                    </label>
-                  </div>
-                </td>
-               
-                <td> April 28, 2024</td>
-                <td> 2:30 PM</td>
-                <td>
-                  <span class="ps-2">Sa Ad</span>
-                </td>
-                <td> #6996 </td>
-                <td> nasira windshield na suntok ko </td>
-                
-              </tr>
-              
-          
-                
-                <td>
-                  <div class="form-check form-check-muted m-0">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input">
-                    </label>
-                  </div>
-                </td>
-               
-                <td> April 30, 2024</td>
-                <td> 10:00 AM</td>
-                <td>
-                  <span class="ps-2">Arne Bana</span>
-                </td>
-                <td> #1573 </td>
-                <td> pag kinaliwa ko manibela, kumakanan </td>
-                
-
-            </tr>
-
-
+                <th> Reference Number</th>
+                <th> Status </th>
             
-
-                
-                </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="form-check form-check-muted m-0">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input">
-                    </label>
-                  </div>
-                </td>
-              
-                <td> May 1, 2024</td>
-                <td> 11:00 AM</td>
-                <td>
-                  <span class="ps-2">Joshhh Ue</span>
-                </td>
-                <td> #1236 </td>
-                <td> I really don't know </td>
-                
-
               </tr>
+            </thead>
+          
+             
+
+              <tbody>
+                @foreach ($bookings->filter(function($booking) {
+                  return \Carbon\Carbon::parse($booking->booking_date)->isFuture() || \Carbon\Carbon::parse($booking->booking_date)->isToday();
+              }) as $booking)
+                  <tr>
+                      <td>{{ \Carbon\Carbon::parse($booking->booking_date)->format('F-d-Y') }}</td>
+                      <td>{{ \Carbon\Carbon::parse($booking->booking_date)->format('h:i A') }}</td>
+                      <td>{{ $booking->user->first_name }} {{ $booking->user->last_name }}</td>
+                      <td>{{ $booking->vehicle_manufacturer . ' ' . $booking->vehicle_model . ' ' . $booking->vehicle_type }}</td>
+                      <td>{{ $booking->description }}</td>
+                      <td>{{ $booking->formatted_id }}</td> 
+                      <td>
+                          <span aria-expanded="false" role="button" tabindex="0" 
+                              class="{{ $booking->status == 'pending' ? 'status-pending' : ($booking->status == 'approved' ? 'status-approved' : ($booking->status == 'cancelled' ? 'status-cancelled' : '')) }}">
+                              {{ ucfirst($booking->status) }} <!-- Capitalizes the first letter -->
+                          </span>
+                      </td>
+                  </tr>
+              @endforeach
+
+                    
+                    
+                    
+                  
+                    
+                  
+                  
+                  {{-- <td>
+                     <a  class="btn btn-warning "  aria-expanded="false" href="{{ route('admin/appointments/edit', ['id'=>$booking->id]) }}">Edit</a>  
+                     <a type="button" class="btn btn-danger " href="{{ route('admin/appointments/delete', ['id'=>$booking->id]) }}  aria-expanded="false">Delete</a>
+                  </td> --}}
+                  
+                  
+                 
+                 
+            
+                </tr>  
+             
+               
+  
+  
+  
+                
+              </tbody>
                 
 
 

@@ -20832,4 +20832,23 @@ div.tagsinput {
   -webkit-flex-grow: 1;
   flex-grow: 1; }
 
+
+  .status-pending {
+    color: yellow;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.status-approved {
+    color: green;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.status-cancelled {
+  color: red;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=maps/style.css.map */

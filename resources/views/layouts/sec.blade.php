@@ -3,7 +3,8 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="vie
+    port" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
    
     @vite([
@@ -33,7 +34,7 @@
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Secretary</h5>
+                  <h5 class="mb-0 font-weight-normal">Admin</h5>
                   <span></span>
                 </div>
               </div>
@@ -78,17 +79,44 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../secretary/dashboard">
+            <a class="nav-link" href="{{ route('secretary.index') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('secretary/quotation') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Quotation</span>
+            </a>
+          </li>
+
+          {{-- <li class="nav-item menu-items">
+            <a class="nav-link" href="../admin/quotations">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Quotations</span>
+            </a>
+          </li> --}}
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('secretary.bookings') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Bookings</span>
+            </a>
+          </li>
         
           
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../secretary/schedule">
+            <a class="nav-link" href="{{ route('secretary.schedule') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
               </span>
@@ -97,17 +125,17 @@
           </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../secretary/appointment">
+            <a class="nav-link" href="{{ route('secretary/appointments') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Appointment</span>
+              <span class="menu-title">Appointments</span>
             </a>
           </li>
 
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../secretary/job-order">
+            <a class="nav-link" href="">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
@@ -115,46 +143,43 @@
             </a>
           </li>
 
-        
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../secretary/billing">
-              <span class="menu-icon">
-                <i class="mdi  mdi-laptop"></i>
-              </span>
-              <span class="menu-title">Billing</span>
-            </a>
-          </li>
 
-
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../secretary/services">
-              <span class="menu-icon">
-                <i class="mdi mdi mdi-server"></i>
-              </span>
-              <span class="menu-title">Services</span>
-            </a>
-          </li>
-
-    
-          {{-- <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="../secretary/" aria-expanded="false" aria-controls="auth">
-              <span class="menu-icon">
-                <i class="mdi mdi-security"></i>
-              </span>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
+         
+          
+            <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/blank-page.html"> Blank Page </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
               </ul>
             </div>
+          </li>
+          
+
+
+         
+        
+
+          {{-- <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('logs') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Logs</span>
+            </a>
           </li> --}}
- 
+
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Transactions</span>
+            </a>
+          </li>
+
+        
         </ul>
       </nav>
       <!-- partial -->
@@ -175,45 +200,8 @@
             </ul>
             <ul class="navbar-nav navbar-nav-right">
               <li class="nav-item dropdown d-none d-lg-block">
-                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-bs-toggle="dropdown" aria-expanded="false" href="#">+ Create New Job Order</a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
-                  <h6 class="p-3 mb-0">Projects</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-file-outline text-primary"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Software Development</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-web text-info"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">UI Development</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-layers text-danger"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Software Testing</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all projects</p>
-                </div>
+                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-bs-toggle="dropdown" aria-expanded="false" href="">+ Create New Job Order</a>
+                
               </li>
               <li class="nav-item nav-settings d-none d-lg-block">
                 
@@ -291,8 +279,8 @@
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Launch Secretary</p>
-                      <p class="text-muted ellipsis mb-0"> New Secretary wow! </p>
+                      <p class="preview-subject mb-1">Launch Admin</p>
+                      <p class="text-muted ellipsis mb-0"> New admin wow! </p>
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
@@ -321,19 +309,19 @@
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-logout text-danger"></i>
-                      </div>
+
+                  <a class="dropdown-item preview-item" href="{{ route('secretary.logout') }}" style="text-decoration: none; color: inherit;">
+                    <div class="preview-thumbnail" style="display: flex; align-items: center;">
+                        <div class="preview-icon bg-dark rounded-circle" style="margin-right: 8px;">
+                            <i class="mdi mdi-logout text-danger"></i>
+                        </div>
+                        <span class="preview-subject mb-1">Log out</span>
                     </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1" id="logout-btn">Log out</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
+                </a>
+
+                  {{-- <div class="dropdown-divider"></div>
                   <p class="p-3 mb-0 text-center">Advanced settings</p>
-                </div>
+                </div> --}}
               </li>
             </ul>
             <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">

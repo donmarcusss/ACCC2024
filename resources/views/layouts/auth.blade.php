@@ -22,8 +22,8 @@
       <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo mw-100" href="../../index.html"><img src="{{ Vite::asset('resources/dashboard logo.png') }}" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="{{ Vite::asset('resources/dashboard logo.png') }}" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo mw-100" href="../../index.html"><img src="{{ Vite::asset('resources/assets/images/dashboard_logo.png') }}" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="{{ Vite::asset('resources/assets/images/dashboard_logo.png') }}" alt="logo" /></a>
         </div>
         <ul class="nav">
           <li class="nav-item profile">
@@ -79,17 +79,34 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../admin/dashboard">
+            <a class="nav-link" href="{{ route('admin.index') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-        
-          
+
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../admin/schedule">
+            <a class="nav-link" href="{{ route('admin/quotation') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Quotation</span>
+            </a>
+          </li>
+
+          {{-- <li class="nav-item menu-items">
+            <a class="nav-link" href="../admin/quotations">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Quotations</span>
+            </a>
+          </li> --}}
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('admin.schedule') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
               </span>
@@ -97,18 +114,29 @@
             </a>
           </li>
 
+
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../admin/appointment">
+            <a class="nav-link" href="{{ route('admin.bookings') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Bookings</span>
+            </a>
+          </li>
+        
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('admin/appointments') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Appointment</span>
+              <span class="menu-title">For Walk In</span>
             </a>
           </li>
 
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../admin/job-order">
+            <a class="nav-link" href="{{ route('admin/job-order') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
@@ -117,82 +145,90 @@
           </li>
 
 
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../admin/billing">
-              <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-              </span>
-              <span class="menu-title">Billing</span>
-            </a>
-          </li>
-
           
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
-          </li>
+
           
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../admin/roles">
-              <span class="menu-icon">
-                <i class="mdi mdi-contacts"></i>
-              </span>
-              <span class="menu-title">Roles</span>
-            </a>
-          </li>
-
-
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../admin/services">
-              <span class="menu-icon">
-                <i class="mdi mdi mdi-server"></i>
-              </span>
-              <span class="menu-title">Services</span>
-            </a>
-          </li>
-          {{-- <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="../admin/" aria-expanded="false" aria-controls="auth">
-              <span class="menu-icon">
-                <i class="mdi mdi-security"></i>
-              </span>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/blank-page.html"> Blank Page </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
-              </ul>
-            </div>
-          </li> --}}
-
-
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../admin/logs">
+            <a class="nav-link" href="{{ route('admin.transactions') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Logs</span>
+              <span class="menu-title">Transactions</span>
             </a>
           </li>
 
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../admin/reports">
+            <a class="nav-link" href="{{ route('admin/equipments') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi mdi-server"></i>
+              </span>
+              <span class="menu-title">Service Description</span>
+            </a>
+          </li>
+        
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('admin.vehicles') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+              </span>
+              <span class="menu-title">Vehicles Management</span>
+            </a>
+          </li>
+
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('admin/services') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi mdi-server"></i>
+              </span>
+              <span class="menu-title">Services Management</span>
+            </a>
+          </li>
+
+  
+
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('admin/roles') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-contacts"></i>
+              </span>
+              <span class="menu-title">User Management</span>
+            </a>
+          </li>
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('admin.booking-reports') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-file-document-box"></i>
               </span>
-              <span class="menu-title">Reports</span>
+              <span class="menu-title">Bookings Report</span>
             </a>
           </li>
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('admin.job-order-reports') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Job Orders Report</span>
+            </a>
+          </li>
+
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('admin.transaction-reports') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Transactions Report</span>
+            </a>
+          </li>
+          
+
         </ul>
       </nav>
       <!-- partial -->
@@ -213,7 +249,7 @@
             </ul>
             <ul class="navbar-nav navbar-nav-right">
               <li class="nav-item dropdown d-none d-lg-block">
-                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-bs-toggle="dropdown" aria-expanded="false" href="../admin/forms">+ Create New Job Order</a>
+                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-bs-toggle="dropdown" aria-expanded="false" href="{{ route('admin/job-order') }}">+ Create New Job Order</a>
                 
               </li>
               <li class="nav-item nav-settings d-none d-lg-block">
@@ -322,19 +358,19 @@
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-logout text-danger"></i>
-                      </div>
+
+                  <a class="dropdown-item preview-item" href="{{ route('admin.logout') }}" style="text-decoration: none; color: inherit;">
+                    <div class="preview-thumbnail" style="display: flex; align-items: center;">
+                        <div class="preview-icon bg-dark rounded-circle" style="margin-right: 8px;">
+                            <i class="mdi mdi-logout text-danger"></i>
+                        </div>
+                        <span class="preview-subject mb-1">Log out</span>
                     </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1" id="logout-btn">Log out</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
+                </a>
+
+                  {{-- <div class="dropdown-divider"></div>
                   <p class="p-3 mb-0 text-center">Advanced settings</p>
-                </div>
+                </div> --}}
               </li>
             </ul>
             <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">

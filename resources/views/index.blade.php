@@ -61,7 +61,7 @@
                 While we commemorate our journey, we never waver in our resolve to provide unmatched customer service, maintain the finest caliber of craftsmanship, and cultivate enduring connections with our esteemed clients. Come see us at Autofixx automobile Care Center, where we provide thorough care and attention to your automobile in addition to maintenance, guaranteeing worry-free travels and smooth rides.
               </p>
                 <br>
-              <button type="button" class="text-white bg-blue-800 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-700 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"><a href="book-now">Book Now</a></button>
+              <button type="button" class="text-white bg-blue-800 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-700 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"><a href="login">Book Now</a></button>
 
             </div>
           </div>
